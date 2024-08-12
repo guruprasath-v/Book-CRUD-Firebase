@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Route, Routes } from 'react-router-dom';
+import DeleteBook from './components/DeleteBook.jsx';
+
+import AddBook from "./components/AddBook.jsx";
+import DisplayBooks from './components/DisplayBooks.jsx';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return(
+      <Routes>
+        <Route path='/' element={<DisplayBooks />}/>
+        <Route path='/add' element = {<AddBook/>} />
+        <Route path='/delete' element = {<DeleteBook />} />
+      </Routes>
+  )
 }
 
 export default App;
